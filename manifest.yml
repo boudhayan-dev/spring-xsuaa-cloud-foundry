@@ -1,0 +1,30 @@
+---
+applications:
+- name: spring-xsuaa-cloud-foundry
+  host: spring-xsuaa-cloud-foundry-i353419
+  memory: 800M
+  path: target/spring-xsuaa-cloud-foundry-0.0.1-SNAPSHOT.war
+  # buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.22
+  env:
+      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}' 
+      JAVA_OPTS: -Djava.security.egd=file:///dev/./urandom
+  services:
+  - spring-xsuaa-cf-uaa
+
+  
+- name: approuter
+  host: approuter-i353419
+  path: src/main/approuter
+  # buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56
+  memory: 128M
+  env:
+    XSAPPNAME: spring-xsuaa-cloud-foundry-i353419
+    TENANT_HOST_PATTERN: "^(.*)-approuter-i353419.cfapps.sap.hana.ondemand.com"
+    destinations: >
+      [{
+         "name":"spring-xsuaa-cf-destination",
+         "url" :"https://spring-xsuaa-cloud-foundry-i353419.cfapps.sap.hana.ondemand.com",
+         "forwardAuthToken": true}
+      ]
+  services:
+    - spring-xsuaa-cf-uaa

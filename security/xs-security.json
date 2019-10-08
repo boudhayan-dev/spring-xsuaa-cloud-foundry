@@ -1,0 +1,32 @@
+{
+    "xsappname": "spring-xsuaa-cloud-foundry-i353419",
+    "description": "Enabled roles for spring mongo app",
+    "tenant-mode": "shared",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.Display",
+            "description": "Display Records"
+        },
+        {
+            "name": "$XSAPPNAME.Update",
+            "description": "Update Records"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Viewer",
+            "description": "View Records",
+            "scope-references": [
+                "$XSAPPNAME.Display"
+            ]
+        },
+        {
+            "name": "Updater",
+            "description": "Add new records",
+            "scope-references": [
+                "$XSAPPNAME.Display",
+                "$XSAPPNAME.Update"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+
+    "routes": [
+        {
+            "source": "^/xsuaa",
+            "target": "/",
+            "destination": "spring-xsuaa-cf-destination"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+org.springframework.boot.env.EnvironmentPostProcessor=com.sap.spring.xsuaa.cf.localEnvironment.MockEnvironmentProcessor
