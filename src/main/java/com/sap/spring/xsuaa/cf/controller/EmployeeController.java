@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import javax.validation.constraints.Size;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -46,9 +47,8 @@ public class EmployeeController {
 	}
 
 	// Get a particular employee by it's ID.
-	// cannot use PathVariable as it conflicts with other controllers due to its String type
-	@GetMapping("read/employee")
-	public Optional<Employee> getEmployee(@RequestParam("id")  String id) {
+	@GetMapping("read/employee/{id}")
+	public Optional<Employee> getEmployee(@PathVariable("id")  ObjectId  id) {
 		return employeeRepository.findById(id);
 	}
 
@@ -66,7 +66,7 @@ public class EmployeeController {
 
 	// Delete a particular employee.
 	@GetMapping("modify/employee/delete/{id}")
-	public boolean deleteEmployee(@PathVariable("id") String id) {
+	public boolean deleteEmployee(@PathVariable("id") ObjectId id) {
 		try {
 			employeeRepository.deleteById(id);
 			return true;
