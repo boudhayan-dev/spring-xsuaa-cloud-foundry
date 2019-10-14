@@ -1,31 +1,31 @@
 {
-    "xsappname": "spring-xsuaa-cloud-foundry-i353419",
-    "description": "Enabled roles for spring mongo app",
+    "xsappname": "spring-xsuaa-cloud-foundry",
+    "description": "Roles for spring xsuaa app",
     "tenant-mode": "shared",
     "scopes": [
         {
-            "name": "$XSAPPNAME.Display",
-            "description": "Display Records"
+            "name": "$XSAPPNAME.Employee",
+            "description": "Employee scope"
         },
         {
-            "name": "$XSAPPNAME.Update",
-            "description": "Update Records"
+            "name": "$XSAPPNAME.Manager",
+            "description": "Manager scope"
         }
     ],
     "role-templates": [
         {
-            "name": "Viewer",
-            "description": "View Records",
+            "name": "Employee",
+            "description": "Role for employee to read movie listings and update reservations",
             "scope-references": [
-                "$XSAPPNAME.Display"
+                "$XSAPPNAME.Employee"
             ]
         },
         {
-            "name": "Updater",
-            "description": "Add new records",
+            "name": "Manager",
+            "description": "Role for manager to create new movie listings and remove existing ones",
             "scope-references": [
-                "$XSAPPNAME.Display",
-                "$XSAPPNAME.Update"
+                "$XSAPPNAME.Employee",
+                "$XSAPPNAME.Manager"
             ]
         }
     ]

@@ -1,7 +1,7 @@
 ---
 applications:
 - name: spring-xsuaa-cloud-foundry
-  host: spring-xsuaa-cloud-foundry-i353419
+  host: spring-xsuaa-cloud-foundry
   memory: 800M
   path: target/spring-xsuaa-cloud-foundry-0.0.1-SNAPSHOT.war
   # buildpack: https://github.com/cloudfoundry/java-buildpack.git#v4.22
@@ -12,18 +12,18 @@ applications:
   - spring-xsuaa-cf-uaa
 
   
-- name: approuter
-  host: approuter-i353419
+- name: spring-xsuaa-cloud-foundry-approuter
+  host: spring-xsuaa-cloud-foundry-approuter
   path: src/main/approuter
   # buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56
   memory: 128M
   env:
-    XSAPPNAME: spring-xsuaa-cloud-foundry-i353419
-    TENANT_HOST_PATTERN: "^(.*)-approuter-i353419.cfapps.sap.hana.ondemand.com"
+    XSAPPNAME: spring-xsuaa-cloud-foundry
+    TENANT_HOST_PATTERN: "^(.*)-spring-xsuaa-cloud-foundry.cfapps.sap.hana.ondemand.com"
     destinations: >
       [{
          "name":"spring-xsuaa-cf-destination",
-         "url" :"https://spring-xsuaa-cloud-foundry-i353419.cfapps.sap.hana.ondemand.com",
+         "url" :"https://spring-xsuaa-cloud-foundry.cfapps.sap.hana.ondemand.com",
          "forwardAuthToken": true}
       ]
   services:

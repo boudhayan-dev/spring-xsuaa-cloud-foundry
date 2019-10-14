@@ -2,7 +2,6 @@ package com.sap.spring.xsuaa.cf.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,8 +30,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 			.and()
 			.authorizeRequests()	
 			.antMatchers("/local/*").permitAll()
-			.antMatchers("/v1/read/*").hasAuthority("Display")
-			.antMatchers("/v1/modify/*").hasAuthority("Update")
+			.antMatchers("/manager/*").hasAuthority("Manager")
+			.antMatchers("/employee/*").hasAuthority("Employee")
 			.anyRequest().authenticated()
 			.and()
 			.oauth2ResourceServer()
