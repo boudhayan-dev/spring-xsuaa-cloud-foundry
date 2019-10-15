@@ -1,5 +1,5 @@
 
-![CircleCI](https://img.shields.io/circleci/build/github/boudhayan-dev/spring-xsuaa-cloud-foundry/master)
+[![CircleCI](https://circleci.com/gh/boudhayan-dev/spring-xsuaa-cloud-foundry.svg?style=svg)](https://circleci.com/gh/boudhayan-dev/spring-xsuaa-cloud-foundry)
 ![GitHub repo size](https://img.shields.io/github/repo-size/boudhayan-dev/spring-xsuaa-cloud-foundry)
 
 # XSUAA Spring Boot integration
