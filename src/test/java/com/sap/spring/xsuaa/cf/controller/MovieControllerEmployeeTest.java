@@ -118,7 +118,7 @@ public class MovieControllerEmployeeTest {
 	@Test
 	void getMovieListDifferentDate() throws Exception {
 		mockMvc.perform(get("/employee/movie/list/19-10-2019").header(HttpHeaders.AUTHORIZATION, jwt_employee))
-				.andExpect(status().is4xxClientError())
+				.andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
 				.andExpect(jsonPath("$", hasSize(0) ));
 	}
