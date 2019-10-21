@@ -10,9 +10,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Setter;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
