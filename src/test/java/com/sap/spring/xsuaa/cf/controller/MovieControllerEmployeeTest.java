@@ -41,7 +41,7 @@ import com.sap.spring.xsuaa.cf.repository.MovieRepository;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class MovieControllerEmployeeIT {
+public class MovieControllerEmployeeTest {
 	
 	@MockBean
 	MovieRepository movieRepository;
@@ -118,7 +118,7 @@ public class MovieControllerEmployeeIT {
 	@Test
 	void getMovieListDifferentDate() throws Exception {
 		mockMvc.perform(get("/employee/movie/list/19-10-2019").header(HttpHeaders.AUTHORIZATION, jwt_employee))
-				.andExpect(status().isOk())
+				.andExpect(status().is4xxClientError())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
 				.andExpect(jsonPath("$", hasSize(0) ));
 	}
