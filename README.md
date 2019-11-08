@@ -8,6 +8,8 @@ This is a sample application to show the integration of XSUAA service on SAP Clo
 
 There are 2 sets of APIs provided by the application - Manager and Employee. Role based access is provided based on these 2 groups.
 
+I have written a blog explaining the steps - https://blogs.sap.com/2019/10/15/add-oauth2-authorization-to-spring-boot-application-using-xsuaa-service-in-sap-cp-cloud-foundry/
+
 ### Local
 
 * Set up mongo db in local
