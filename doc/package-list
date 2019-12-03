@@ -1,0 +1,6 @@
+com.sap.spring.xsuaa.cf
+com.sap.spring.xsuaa.cf.config
+com.sap.spring.xsuaa.cf.controller
+com.sap.spring.xsuaa.cf.localEnvironment
+com.sap.spring.xsuaa.cf.model
+com.sap.spring.xsuaa.cf.repository

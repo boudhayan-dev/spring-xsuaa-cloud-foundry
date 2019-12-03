@@ -68,7 +68,7 @@ public class MovieControllerEmployeeTest {
 				._id(new ObjectId())
 				.name("Interstellar")
 				.description("Interstellar movie")
-				.date("21-10-2019")
+				.date("22-10-2019")
 				.seats(10)
 				.build();
 		
@@ -79,20 +79,20 @@ public class MovieControllerEmployeeTest {
 	
     
 	
-	@DisplayName("TEST - tokenInfo (Oauth)")
-	@Test
-	void getTokenInfoTest() throws Exception {	
-		mockMvc.perform(get("/employee/tokenInfo").header(HttpHeaders.AUTHORIZATION, jwt_employee))
-					.andExpect(status().isOk());
-	}
+//	@DisplayName("TEST - tokenInfo (Oauth)")
+//	@Test
+//	void getTokenInfoTest() throws Exception {	
+//		mockMvc.perform(get("/employee/tokenInfo").header(HttpHeaders.AUTHORIZATION, jwt_employee))
+//					.andExpect(status().isOk());
+//	}
 	
 	
-	@DisplayName("TEST - tokenInfo 403 (Oauth)")
-	@Test
-	void getTokenInfoTest403() throws Exception {
-		mockMvc.perform(get("/employee/tokenInfo"))
-		.andExpect(status().is4xxClientError());
-	}
+//	@DisplayName("TEST - tokenInfo 403 (Oauth)")
+//	@Test
+//	void getTokenInfoTest403() throws Exception {
+//		mockMvc.perform(get("/employee/tokenInfo"))
+//		.andExpect(status().is4xxClientError());
+//	}
 	
 	
 	@DisplayName("TEST - getMovieById (Oauth)")

@@ -2,6 +2,7 @@ package com.sap.spring.xsuaa.cf.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,11 +29,11 @@ public class MovieControllerEmployee {
 	
 	
 	// Get Token info
-	@GetMapping("tokenInfo")
-	public Token getTokenInfo(@AuthenticationPrincipal Token token) {
-		return token;
-	}
-	
+//	@GetMapping("tokenInfo")
+//	public Token getTokenInfo(@AuthenticationPrincipal Token token) {
+//		return token;
+//	}
+//	
 	
 	// Get movie by ID
 	@GetMapping("movie/{id}")

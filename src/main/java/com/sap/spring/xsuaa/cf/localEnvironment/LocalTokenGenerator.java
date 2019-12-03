@@ -20,7 +20,8 @@ public class LocalTokenGenerator {
 	@GetMapping("getLocalToken")
 	public String getLocalToken() {
 		String token = new JwtGenerator().setUserName("boudhayan.dev@example.com")
-				.addScopes(getGlobalScope("Manager"),getGlobalScope("Employee"))
+//				.addScopes(getGlobalScope("Manager"),getGlobalScope("Employee"))
+				.addScopes(getGlobalScope("Manager"))
 				.getTokenForAuthorizationHeader();
 		
 		return token;
